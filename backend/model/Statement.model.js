@@ -23,7 +23,10 @@ const statementSchema = new mongoose.Schema({
     },
     videoLink: {
         type: String,
-        enum: ['l1', 'l2', 'l3']
+        enum: [ ]
+    },
+    SolApproach: {
+        type: String,
     },
     category: {
         type: String,

@@ -1,0 +1,8 @@
+.body {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+}
+
+.body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}

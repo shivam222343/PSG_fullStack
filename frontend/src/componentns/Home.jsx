@@ -1,6 +1,7 @@
 import React from 'react';
 import Newadded from './Newadded';
 
+
 export default function Home() {
   return (
     <div className="Home min-h-screen w-full bg-slate-800 overflow-x-hidden flex flex-col pb-20 justify-center items-center">

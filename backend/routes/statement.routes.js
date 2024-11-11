@@ -23,6 +23,7 @@ router.post('/add-statement', authentication, async (req, res) => {
             category: req.body.category,
             languages: req.body.languages,
             videoLink: req.body.videoLink,
+            SolApproach: req.body.SolApproach,
         });
 
         // Save the statement to the database
