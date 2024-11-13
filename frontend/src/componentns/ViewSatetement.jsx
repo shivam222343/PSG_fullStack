@@ -9,7 +9,7 @@ export default function ViewSatetement() {
     const [Data, setData] = useState([]);
     useEffect(() => {
       const fetchData = async () => {
-        const result = await axios(`http://localhost:3000/get-statement/${id}`);
+        const result = await axios(`https://psg-backend.onrender.com/get-statement/${id}`);
         setData(result.data);
         console.log(result.data);
       };

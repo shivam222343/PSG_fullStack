@@ -13,7 +13,7 @@ const Profile = () => {
       
     useEffect(() => {
       const fetchData = async () => {
-          const response = await axios.get('http://localhost:3000/register',{headers});
+          const response = await axios.get('https://psg-backend.onrender.com/register',{headers});
           setData(response.data);
           console.log(response.data);
           

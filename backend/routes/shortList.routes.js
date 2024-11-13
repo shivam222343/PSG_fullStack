@@ -30,7 +30,7 @@ router.put('/ShortList', authentication, async (req, res) => {
 });
 
 //remove statement from shortlist
-router.delete('/remove', authentication, async (req, res) => {
+router.delete('/remove', async (req, res) => {
     try {
            const {id} = req.headers;
            const {sid} = req.headers;
@@ -58,7 +58,7 @@ router.delete('/remove', authentication, async (req, res) => {
 
 //geting shortlisted data
 
-router.get('/get-shortlist', authentication, async (req, res) => {
+router.get('/get-shortlist',  async (req, res) => {
     try {
         const {id} = req.headers;
         const userData = await userModel.findById(id).populate('shortList');  //populate fetch all data from related documents

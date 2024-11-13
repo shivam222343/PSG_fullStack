@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from 'react';
 import { IoPlayBackCircle } from "react-icons/io5";
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import Spline from '@splinetool/react-spline';
+import { Link } from 'react-router-dom';
 import "./NoScroll.css"
 
 export default function AiPrompts() {
@@ -13,6 +13,9 @@ export default function AiPrompts() {
   
   const fontSizes = ['sm', 'md', 'lg', 'xl', '2xl', '3xl'];
   const [index, setIndex] = useState(3); // starting from 'xl'
+
+  const isLoggedIn = localStorage.getItem('id')!== null;
+  
 
   const decrease = () => {
     if (index > 0) {
@@ -69,7 +72,7 @@ export default function AiPrompts() {
 
   return (
     <div className="bg-slate-900 min-h-screen w-full flex flex-col items-center py-20 text-slate-200">
-      <div className="relative min-h-[80vh] w-full flex flex-col justify-center items-center">
+      { isLoggedIn === true && <div className="relative min-h-[80vh] w-full flex flex-col justify-center items-center">
         <div className=" w-full flex justify-between items-center px-4 py-2">
           <NavLink to="/" className="text-4xl text-white hover:text-yellow-400">
             <IoPlayBackCircle />
@@ -121,6 +124,18 @@ export default function AiPrompts() {
           <button onClick={copyToClipboard} className="absolute top-4 right-4 text-yellow-400 font-semibold">Copy</button>
         </div>
       </div>
+      }
+      {
+  isLoggedIn === false &&
+  <div className="newAdded-statements min-h-96 w-[95vw] md:[85vw] rounded-lg flex flex-col justify-center items-center bg-slate-900">
+    <h3 className='tagline text-white font-semibold my-3'>To Use Ai Prompt, You have to logIn.</h3>
+    <div className="login h-auto w-auto font-semibold flex justify-center items-center rounded-md  p-3 border-2 border-green-300 duration-300 hover:text-green-900 text-green-300 hover:bg-green-300">
+      <Link to="/login">Login</Link>
     </div>
+  </div>
+}
+    </div>
+
+
   );
 }

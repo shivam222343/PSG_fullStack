@@ -17,7 +17,7 @@ const Signup = () => {
             return;
          }
          
-         const response = await axios.post('http://localhost:3000/signup', Value);
+         const response = await axios.post('https://psg-backend.onrender.com/signup', Value);
          alert(response.data.message);
 
       } catch (error) {

@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, redirect } from 'react-router-dom';
 import { FcTodoList } from "react-icons/fc";
 import axios from 'axios';
+import { CgPlayListRemove } from "react-icons/cg";
+import { useNavigate } from'react-router-dom';
 
-export default function Card({ data }) {
+export default function ShortListedCards({ data }) {
 
   const id = localStorage.getItem('id');
   const sid = data._id;
@@ -14,11 +16,11 @@ export default function Card({ data }) {
     'sid' : sid
   }
 
-  
+  const navigate = useNavigate()
 
- const handleshortList = async () => {
+ const handleRemoveFromList = async () => {
         try {
-          const response = await axios.put("https://psg-backend.onrender.com/ShortList",{},{
+          const response = await axios.delete("https://psg-backend.onrender.com/remove",{
             headers
            });
 
@@ -27,6 +29,8 @@ export default function Card({ data }) {
         } catch (error) {
           alert(error.response.data.message);
         }
+
+        navigate(0);
 
  }
 
@@ -50,7 +54,7 @@ export default function Card({ data }) {
         </Link>
           <div className="view-more h-16 w-16 md:h-20 md:w-20 text-white p-2 rounded-md duration-300 flex flex-col justify-center items-center">
             <div className="text-3xl bg-slate-900 p-1 rounded-lg hover:text-4xl duration-300">
-          <button onClick={handleshortList}><FcTodoList /></button>
+          <button onClick={handleRemoveFromList}><CgPlayListRemove/></button>
             </div>
           </div>
       </div>

@@ -15,6 +15,7 @@ import Profile from "./componentns/Profile"
 import { useDispatch, useSelector } from'react-redux';
 import { authActions } from "./store/auth"
 import { useEffect } from "react"
+import Menu from "./componentns/Menu"
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="/ai-prompts" element={<AiPrompts />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/menu" element={<Menu />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<SignUp />} />

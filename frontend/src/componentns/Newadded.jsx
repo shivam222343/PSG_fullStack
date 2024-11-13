@@ -9,7 +9,7 @@ export default function Newadded() {
     const [Data, setData] = useState([]);
     useEffect(() => {
       const fetchData = async () => {
-        const result = await axios('http://localhost:3000/recentlyAdded-statements');
+        const result = await axios('https://psg-backend.onrender.com/recentlyAdded-statements');
         setData(result.data);
       };
      

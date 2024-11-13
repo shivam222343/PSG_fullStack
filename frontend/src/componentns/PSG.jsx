@@ -13,7 +13,7 @@ export default function PSG() {
     const [Data, setData] = useState([]);
     useEffect(() => {
       const fetchData = async () => {
-        const result = await axios('http://localhost:3000/All-statements');
+        const result = await axios('https://psg-backend.onrender.com/All-statements');
         setData(result.data);
       };
      
