@@ -27,6 +27,7 @@ const dispatch = useDispatch();
          dispatch(authActions.changeRoll(response.data.role));
          localStorage.setItem('token', response.data.token);
          localStorage.setItem('id', response.data.userId);
+         localStorage.setItem('aidata', "I am always ready to help you....!")
          localStorage.setItem('role', response.data.role);
          navigate('/');
 

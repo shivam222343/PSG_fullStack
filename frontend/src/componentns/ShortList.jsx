@@ -20,6 +20,7 @@ export default function ShortList() {
       const result = await axios.get('https://psg-backend.onrender.com/get-shortlist',
         { headers }
       );
+
       setData(result.data);
     };
 
@@ -29,7 +30,6 @@ export default function ShortList() {
 
   }, []);
 
-  const types = ['Frontend', 'Blockchain', 'Fullstack', 'Android development', 'Backend', 'Aiml']
 
   return (
     <div className='min-h-screen w-full bg-slate-800 overflow-x-hidden flex flex-col py-20 justify-center items-center'>
@@ -37,7 +37,9 @@ export default function ShortList() {
         isLoggedIn === true && <div className="newAdded-statements min-h-96 w-[95vw] md:[85vw] rounded-lg flex flex-col justify-center items-center bg-slate-900">
           <h3 className='tagline text-white font-semibold my-3'>Short Listed Statements</h3>
 
-          {!Data && <Loader />}
+          {
+          Data.length === 0 && <Loader />
+        }
           <ul>
             {Data && Data.map((item, index) => (
               <li key={index}>

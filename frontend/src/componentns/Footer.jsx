@@ -29,8 +29,8 @@ export default function Footer() {
         {/* Contact and Social Media */}
         <div className="w-full lg:w-1/3">
           <h3 className="text-lg font-semibold text-white">Contact Us</h3>
-          <p className="mt-2 text-sm">Email: contact@psgproject.com</p>
-          <p className="text-sm">Phone: +123 456 7890</p>
+          <p className="mt-2 text-sm">Email: shivamdombe1@gmail.com</p>
+          <p className="text-sm">Phone: 8010961216</p>
 
           <div className="mt-4 flex space-x-4">
             <a href="https://facebook.com" className="hover:text-rose-500" aria-label="Facebook">

@@ -8,6 +8,8 @@ const userModel = require('../model/User.model');
 router.post('/add-statement', authentication, async (req, res) => {
     try {
         const { id } = req.headers;
+        console.log(id);
+        
         const user = await userModel.findById(id);
 
         // Check if user has admin role
@@ -142,6 +144,24 @@ router.get('/get-statement/:id', async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ message: 'Error getting statement', error: error.message });
+    }
+});
+
+//get statement by language
+router.get('/statements/by-language/:language', async (req, res) => {
+    try {
+        const { language } = req.params;
+        
+        // Find statements where the `languages` field matches the input language
+        const statements = await StatementModel.find({ languages: language });
+        
+        if (statements.length === 0) {
+            return res.status(404).json({ message: `No statements found for language: ${language}` });
+        }
+
+        res.status(200).json(statements);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching statements by language', error: error.message });
     }
 });
 

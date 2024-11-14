@@ -20,6 +20,7 @@ const statementSchema = new mongoose.Schema({
     languages: {
         type: String,
         required: true,
+        enum:["html", "css", "javascript", "python", "java", "c++", "swift", "ruby", "go", "rust", "assembly", "typescript", "php", "sql", "nosql"]
     },
     videoLink: {
         type: String,

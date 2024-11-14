@@ -56,7 +56,7 @@ const Contact = () => {
                     </div>
                 </form>
                 <div className="mt-6 text-center text-sm text-slate-400">
-                    Or reach us at <a href="mailto:contact@psg.com" className="text-slate-300 underline">contact@psg.com</a>
+                    Or reach us at <a href="mailto:contact@psg.com" className="text-slate-300 underline">shivamdombe1@gmail.com</a>
                 </div>
             </div>
         </div>

@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from'react-redux';
 import { authActions } from "./store/auth"
 import { useEffect } from "react"
 import Menu from "./componentns/Menu"
+import AddStatement from "./componentns/AddStatement"
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/add-statement" element={<AddStatement />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/get-statement/:id" element={<ViewSatetement/>} />
       </Routes>

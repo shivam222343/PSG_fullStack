@@ -29,7 +29,9 @@ export default function PSG() {
       isLoggedIn === true && <div className="newAdded-statements min-h-96 w-[95vw] md:[85vw] rounded-lg flex flex-col justify-center items-center bg-slate-900">
       <h3 className='tagline text-white font-semibold my-3'>All Statements</h3>
    
-      {!Data && <Loader/> }
+      {
+          Data.length === 0 && <Loader />
+        }
       <ul>
           {Data && Data.map((item, index) => (
               <li key={index}>

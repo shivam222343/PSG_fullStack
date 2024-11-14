@@ -14,8 +14,10 @@ export default function Menu() {
     ];
 
     const logout = () => {
+      localStorage.setItem('aidata', "I am always ready to help you....!")
         localStorage.removeItem('id');
         localStorage.removeItem('token');
+        localStorage.removeItem('role');
         window.location.reload();
     }
     const isLoggedIn = localStorage.getItem('id')!== null;

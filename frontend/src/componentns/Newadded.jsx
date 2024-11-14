@@ -10,10 +10,12 @@ export default function Newadded() {
     useEffect(() => {
       const fetchData = async () => {
         const result = await axios('https://psg-backend.onrender.com/recentlyAdded-statements');
-        setData(result.data);
+       setData(result.data);
       };
      
       fetchData();
+
+    
         
     }, []);
 
@@ -21,7 +23,11 @@ export default function Newadded() {
     <div className='flex flex-col justify-center items-center'>
         <h3 className='tagline text-white font-semibold my-3'>Newly Added</h3>
         <ul>
-          {!Data && <Loader />}
+
+        {
+          Data.length === 0 && <Loader />
+        }
+
             {Data && Data.map((item, index) => (
                 <li key={index}>
                   <div className=" md:w-auto w-[90vw] justify-center items-center flex flex-col cardbody my-3 text-white ">
